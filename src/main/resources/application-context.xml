@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.alex.spring_context.CombatCat" id="firstCat">
+        <property name="name" value="Alex"/>
+    </bean>
+
+    <bean class="com.alex.spring_context.CombatCat" id="secondCat">
+        <property name="name" value="Tom"/>
+    </bean>
+
+    <bean class="com.alex.spring_context.FightClubImpl" id="fightClub">
+        <property name="firstCat" ref="firstCat"/>
+        <property name="secondCat" ref="secondCat"/>
+    </bean>
+
+    <bean class="com.alex.spring_context.CalculateCatStrengthBeanPostProcessor"/>
+    <bean class="com.alex.spring_context.PureTransactionalHandlerBeanPostProcessor"/>
+
+</beans>
